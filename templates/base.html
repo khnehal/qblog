@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" />
+
+    <title>{% block title %}My amazing site{% endblock %}</title>
+    
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+    <div id="sidebar">
+        {% block sidebar %}
+        
+        <div class="container1">
+
+            <div class="btn-group-vertical">
+                <a href="#"><span class="glyphicon glyphicon-envelope"></span></a>
+                <a href="#"><span class="glyphicon glyphicon-search"></span></a>
+                <button type="button" class="btn btn-primary">A</button>
+                <button type="button" class="btn btn-primary">B</button>
+                <button type="button" class="btn btn-primary">C</button>
+                <button type="button" class="btn btn-primary">C</button>
+          
+               
+            </div>
+        </div>
+ 
+         
+        {% endblock %}
+    </div>
+    
+    <div class="container">
+        {% block jumbotron %}
+       <div class="jumbotron">
+           {% block jumbotron_content %}
+           
+           {% endblock %} 
+       </div>
+            {% endblock %}   
+            {% block content %}
+            {% endblock %}
+           
+ <div class="row">
+    <div class="col-sm-4" style="background-color:blue; height:150px">
+        <p> Related article1<p><a href="moon.html">Moon</a></p> 
+    </div>
+   
+    <div class="col-sm-4" style="background-color:lavender; height:150px">
+        <p> Related article2<a href="sun.html">Sun</a></p>
+    </div>
+    
+    <div class="col-sm-4" style="background-color:black; height:150px">
+        <p> Related article3<a href="pluto.html">Pluto</a></p>
+    </div>
+
+  </div>
+</div>    
+        
+        
+</body>
+</html>

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load django_markdown %}
+
+{% block jumbotron_content %}
+
+
+<div class="row">
+  <div class='col-sm-12'>
+    <h1> Hello Universe </h1>
+         <p> The Universe is all of time and space and its contents.[8][9][10][11] The Universe includes planets, stars, galaxies, the contents of intergalactic space, the smallest subatomic particles, and all matter and energy. The observable universe is about 28 billion parsecs (91 billion light-years) in diameter at the present time.[2] The size of the whole Universe is not known and may be infinite.[12] Observations and the development of physical theories have led to inferences about the composition and evolution of the Universe.</p>
+            <img src="/static/Grand_Universe.jpg" class="img-rounded" alt="cant display" width="304" height="236">     
+  </div>
+   <div class="col-xs-10" style="background-color:black; height:300px">
+   </div> 
+
+ </div>
+
+{% endblock %}
+
+
+{% block content %}
+
+<div class="row">
+  <div class="col-sm-25 pull-right">
+ {% for object in object_list %}
+ 
+  <div class="post">
+    <h2>{{ object.title }}</h2>
+    <p class="meta">{{ object.created }}  
+       <a href="{{ blog.get_absolute_url }}" class="btn btn-info" >read more</a></p>
+    {{ object.body|markdown }}
+  </div>
+  
+{% endfor %}
+</div>
+  </div>
+  
+  <div class="container">
+  <div class="well well-sm">what to read next 
+
+    <ul class="pager">
+    <li><a href="#"> < </a></li>
+    <li><a href="#"> > </a></li>
+  </ul>
+  </div>
+
+
+</div>
+
+  
+  
+{% endblock %}
