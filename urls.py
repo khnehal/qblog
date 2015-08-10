@@ -22,6 +22,5 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^markdown/', include('django_markdown.urls')),
     url(r'^', include('blog.urls')),
-    url(r'^blog/(?P<slug>[-\w]+)$', 'blog.views.home', name='home' ),
-   
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
